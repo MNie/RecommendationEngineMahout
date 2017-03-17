@@ -19,7 +19,7 @@ class RecommendationSpec extends Specification {
       status(result) must equalTo(OK)
     }
 
-    "send 500 when asking for recommendation without userid" in new WithApplication{
+    "send 400 when asking for recommendation without userid" in new WithApplication{
       val result = route(FakeRequest(GET, "/Recommend")).get
       status(result) must equalTo(BAD_REQUEST)
     }
